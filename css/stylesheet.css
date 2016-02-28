@@ -1,0 +1,80 @@
+h1{
+    margin: 0px 0px 0px 0px;
+    font-size:100px;
+    font-family: 'Raleway', sans-serif;
+    color:white;
+}
+
+body {
+    background-image:url("https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg");
+    background-size:cover;
+    background-attachment:fixed;
+    overflow:scroll;
+}
+.login{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+
+.about{
+    border-bottom-color:#2F4F4F;
+    font-size:40px;
+    text-align:center;
+    color:#000000;
+}
+
+input{
+    width:20px;
+}
+
+#map{
+    height:500px;
+}
+
+header {
+    background-color:brown;
+width:260px;
+height:520px;
+position:absolute;
+right:0;
+border:0px solid #d8d8d8;
+margin-left:40px;
+padding:20px 0px;
+border-radius:3px;
+box-shadow:0 0 8px gray;
+}
+#Headerr {
+    background-color:black;
+    color:white;
+    text-align:center;
+    font-size:80px;
+    height:100px;
+    
+}
+
+#section {
+    
+    text-align:center;
+    height:300px;
+    font-size:40px;
+    color:white;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    width:500px;
+}
+ 
+#goatsmeet {
+    height: 120px;
+}

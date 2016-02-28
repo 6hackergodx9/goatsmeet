@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+        <meta name="google-signin-client_id" content="79471272558-at4ipri74qt18cd33id3mnl44aanq5g8.apps.googleusercontent.com">
+        <link rel="stylesheet" href="css/stylesheet.css" type="text/css" />
+        <script type="text/javascript" src="script/jquery-2.2.1.min.js"></script>
+        <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <!--<script>
+      var map;
+
+      require(["esri/map", "dojo/domReady!"], function(Map) {
+        map = new Map("map", {
+          basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
+          center: [-122.45, 37.75], // longitude, latitude
+          zoom: 13
+        });
+      });
+    </script>!-->
+    </head>
+    <body>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="content">
+            <center><h1 class="goatsmeet" id="goatsmeet" ></h1></center>
+            <script>
+                $(document).ready(function(){
+                    $(".goatsmeet").typed({
+                        strings: ["GoatsMeet^1000", "Fresh Meat^1000","Straight from the Farms^1000","Get the very best of the best^1000!", "Only on GoatsMeet^1000"],
+                        typeSpeed: 15
+                        
+                    });
+                });
+            </script>
+            <a href="https://goatsmeet-matthewgaim.c9users.io/market.html"></a>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <div id="Headerr">
+                <h5>What Is GoatsMeet?</h5>
+            </div>
+            
+            <div id="section">
+                <p>GoatsMeet is a webpage for meatlovers, it was made because not every steak is high-quality. Lucky for you, GoatsMeet was made for only high quality meat. Here you can talk to 
+                farmers who keep animals in a non-hormone and non-steroid envoiroment</p>
+            <div id="footer">
+                <script>function signOut() {var auth2 = gapi.auth2.getAuthInstance(); auth2.signOut().then(function () {  console.log('User signed out.'); });} </script>
+            </div>
+            
+            <input onclick="signOut()" type="button" class="button" value="Sign Out">
+ 
+
+        <script>function signOut() {var auth2 = gapi.auth2.getAuthInstance(); auth2.signOut().then(function () {  console.log('User signed out.'); });}
+        </script>
+        <script type="text/javascript" src="script/script.js"></script>
+        <script type="text/javascript" src="script/slider.js"></script>
+        <script type="text/javascript" src=".js"></script>
+        <link href="css/slider.css" rel="stylesheet"></link>
+        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'><fonts class="googleapis"></fonts>
+        <script src="script/slider.js"></script>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="typed/js/typed.js"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css"></link>
+            <script src="https://js.arcgis.com/3.15/"></script>
+</body>
+</html>
