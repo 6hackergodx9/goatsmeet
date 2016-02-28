@@ -4,15 +4,16 @@ body {
 }
 body {
   padding-top: 70px;
+  background-color:honeydew;
 }
 footer {
   padding: 30px 0;
 }
 
-#map{
+/**#map{
     height:300px;
     width:300px;
-}
+}**/
 
 /*
  * Off Canvas
@@ -59,14 +60,21 @@ footer {
   }
 }
 
-.farmers{
-    width:280px;
+.vendor-pic{
+   width:600px;
+   height:500px;
 }
 
 .farmers-modal{
     width:300px;
 }
-
+.button2 {
+    width:20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 20px;
+    float:left;
+}
 .modalDialog {
 	position: fixed;
 	font-family: Arial, Helvetica, sans-serif;
@@ -116,8 +124,25 @@ footer {
     background: #00d9ff; 
 }
 
-
 .row{
   display:flex;
   flex-direction:column;
+}
+form{
+  text-align:center;
+  width:300px;
+  
+}
+
+input{
+  text-align:center;
+  width:300px;
+  
+}
+
+#tru{
+    margin: 0 auto;
+    width: 100px;
+    margin-left:800px;
+    display: block;
 }

@@ -11,15 +11,19 @@
         <!-- Latest compiled and minified JavaScript -->
         <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
         <script type="text/javascript" src="script/jquery-2.2.1.min.js"></script>
-        <script type="text/javascript" src="script/script.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <script src="https://js.arcgis.com/3.15/"></script>
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-        <script src="//cdn.sinch.com/latest/sinch.min.js"></script>
+        <script src="script/sinch.min.js"></script>
+        <script src="sweetalert/dist/sweetalert.min.js"></script>
+                        <script src="https://js.arcgis.com/3.15/"></script>
+                <script type="text/javascript" src="script/script.js"></script>
 
+        <link rel="stylesheet" type="text/css" href="sweetalert/dist/sweetalert.css">
     </head>
     <body>
-
+      <div>
+        <a id=tru href="index.html"  class="button2">home</a>
+      </div>
     <div class="container">
 
       <div class="row row-offcanvas row-offcanvas-right">
@@ -29,35 +33,63 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
-            <h1>GoatsMeet</h1>
+            <h1>GoatsMeet <img src="cartoon-steak-005.png"></img></h1>
           </div>
+          
+         <form id="auth">
+            <input id="username" placeholder="username">
+            <input id="password" type="password" placeholder="password">
+            <button id="loginUser">Login</button>
+            <button id="createUser">Signup</button>
+          </form>
+          
+    <div    id="call" style="display:none;">       
+            current user: <span id="username"></span>
+            <button id="logout">Logout</button>
+            
+        <form>
+            <input id="callUsername" placeholder="username"><br>
+            <button id="call">Call</button>
+            <button id="hangup">Hangup</button>
+            <button id="answer">Answer</button>
+            <audio id="incoming" autoplay></audio>
+            <div id="callLog"></div>
+        </form>
+    </div 
+          
+        <center><form>
+          Full Name:<br>
+          <input placeholder="Ex: Billy Bob"type="text" id="name"><br>
+          State:<br>
+          <input placeholder="Ex: CA" type="text" id="state"><br>
+          Available Produce:<br>
+          <input placeholder="Ex: Beef"type="text" id="stock" ><br>
+          Description:<br>
+          <input placeholder="Ex: 100$ steak for sale, grass fed..etc."type="text" id="description"><br>
+          Image URL:<br>
+          <input placeholder="Ex: https://www.google.com/images/2016/logo.png" type="text" id="imgurl"><br><br>
+          <input type="button" id="submit" value="Submit">
+        </form>
           <div class="row">
-            <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
-          <div class="list-group">
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-            <a href="#" class="list-group-item">Link</a>
-          </div>
-        </div
+            
             <div class="col-xs-6 col-lg-4">
               
               <img class="vendor-pic" id="vendor-pic" src="http://cwspi3qoj94m3t5a1dwwupr6z.wpengine.netdna-cdn.com/wp-content/uploads/2014/08/Happy-Farmer-600x350.jpg"></img>
               <h2 class="vendor-name" id="vendor-name">Billy Bob</h2>
-              <button id="submit"></button>
+              <h3 class="state" id="state"></h3>
               <p class="vendor-description" id="vendor-description">I raise all types of animals. You name them, I got them :3</p>
-              <p><a class="btn btn-default" href="#openModal" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" href="#openModal" href="button1Clicked" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
             
             <div class="col-xs-6 col-lg-4">
-              <img class="vendor-pic" id="vendor-pic" src="http://cwspi3qoj94m3t5a1dwwupr6z.wpengine.netdna-cdn.com/wp-content/uploads/2014/08/Happy-Farmer-600x350.jpg"></img>
+              <img class="vendor-pic" id="vendor-pic" src="http://previews.123rf.com/images/visionsi/visionsi1401/visionsi140100034/24947079-Happy-farmer-show-his-organic-potato--Stock-Photo.jpg"></img>
               <h2 class="vendor-name" id="vendor-name">Billy Bob</h2>
-              <button id="submit"></button>
+              <h3 class="state" id="state"></h3>
               <p class="vendor-description" id="vendor-description">I raise all types of animals. You name them, I got them :3</p>
-              <p><a class="btn btn-default" href="#openModal" role="button">View details &raquo;</a></p>
+              <p><a class="btn btn-default" id="details" href="#openModal2" role="button">View details &raquo;</a></p>
             </div><!--/.col-xs-6.col-lg-4-->
           </div><!--/row-->
-        </div><!--/.col-xs-12.col-sm-9-->
-
+        </div></center><!--/.col-xs-12.col-sm-9-->
         <!--/.sidebar-offcanvas-->
       </div><!--/row-->
 
@@ -70,18 +102,46 @@
     </div>
     <div id="openModal" class="modalDialog">
         <div>
-            <a href="#close" title="Close" class="close">Close</a>
-            <img class="farmers-modal" src="http://cwspi3qoj94m3t5a1dwwupr6z.wpengine.netdna-cdn.com/wp-content/uploads/2014/08/Happy-Farmer-600x350.jpg"></img>
-            <h1 class="vendor-name">Billy Bob</h1>
-            <h2 class="vendor-description">"I sell everything. I mean EVERYTHING."</p>
+            <a href="#close" title="Close" class="close">X</a>
+            <img class="farmers-modal" id="farmers-modal"></img>
+            <h1 class="vendor-name" id="vendor-name"></h1>
+            <h2 class="vendor-description" id="vendor-description"></p>
             <div id="map">
             </div>
         </div>
     </div>
+    <div id="openModal2" class="modalDialog">
+        <div>
+            <a href="#close" title="Close" class="close">Y</a>
+            <img class="farmers-modal" id="farmers-modal" src="http://previews.123rf.com/images/visionsi/visionsi1401/visionsi140100034/24947079-Happy-farmer-show-his-organic-potato--Stock-Photo.jpg"></img>
+            <h1 class="vendor-name" id="vendor-name">Bobby Thompson</h1>
+            <h2 class="vendor-description" id="vendor-description">I have 7 sheeps right now, but 2 of them are pregnant. They're all grassfed</p>
+            <div id="map2">
+              <script>
+                var map;
+                  require(["esri/map","esri/toolbars/draw",
+                      "esri/symbols/SimpleMarkerSymbol","esri/Color","esri/geometry/Point", "esri/SpatialReference","esri/graphic", "dojo/domReady!"], function(Map,Draw,
+                      SimpleMarkerSymbol,Color,Point,SpatialReference, Graphic) {
+                    map = new Map("map2", {
+                      basemap: "topo",  
+                      center: [-122.3677502, 38.4093411],
+                      zoom: 13
+                    });
+                  var markerSymbol = new SimpleMarkerSymbol();
+                      //markerSymbol.setPath("M16,4.938c-7.732,0-14,4.701-14,10.5c0,1.981,0.741,3.833,2.016,5.414L2,25.272l5.613-1.44c2.339,1.316,5.237,2.106,8.387,2.106c7.732,0,14-4.701,14-10.5S23.732,4.938,16,4.938zM16.868,21.375h-1.969v-1.889h1.969V21.375zM16.772,18.094h-1.777l-0.176-8.083h2.113L16.772,18.094z");
+                      //markerSymbol.setColor(new Color("#00FFFF"));
+                  var pt = new Point(-122.3677502, 38.4093411,SpatialReference({ wkid: 4326 }));
+                  //var graphic = new Graphic(pt,markerSymbol);
+                  map.on("load",function(){
+                    map.graphics.add(new Graphic(pt, markerSymbol));
+                  });
+                  });
+              </script>
+            </div>
+        </div>
+    </div>
     
-    <script>
-      
-    </script>
+    <div class="error"></div>
     </body>
 </html>
 

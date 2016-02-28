@@ -1,0 +1,46 @@
+h1{
+    font-size:80px;
+    font-family:Raleway, sans-serif;
+}
+body{
+    background-color:honeydew;
+}
+
+.people img{
+    height:500px;
+    border-radius:50%;
+}
+
+
+.people{
+    display:inline-block;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    font-family: 'Lato', sans-serif;
+}
+
+.us{
+    background-color:honeydew;
+    height:100vh;
+    margin: 0px 0px 0px 0px;
+    padding-bottom:0px;
+    margin: 0;
+    border:0;
+}
+
+.madewith{
+    margin: 0;
+    border:0;
+    background-color:#f4a460;
+    height:100vh;
+}
+
+.sponsors{
+    display:inline-block;
+    margin-top:300px;
+}
+
+.sponsors img{
+    width:500px;
+}

@@ -57,7 +57,7 @@ box-shadow:0 0 8px gray;
 }
 
 #section {
-    
+    margin-top:100px;
     text-align:center;
     height:300px;
     font-size:40px;
@@ -72,9 +72,31 @@ box-shadow:0 0 8px gray;
     text-decoration: none;
     font-size: 20px;
     cursor: pointer;
-    width:500px;
+    width:150px;
+}
+
+.button1 {
+    display: inline-block;
+    height:36px;
+    width:120px;
+    margin-top: 8px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
 }
  
 #goatsmeet {
     height: 120px;
+}
+.abcRioButton{
+    display: inline-block;
+}
+
+footer{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
 }

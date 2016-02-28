@@ -7,6 +7,8 @@
         <script type="text/javascript" src="script/jquery-2.2.1.min.js"></script>
         <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
         <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script id="counter" page="one" label="Page views:" src="https://www.sendgrowth.com/assets/js/counter.js"></script>
         <!--<script>
       var map;
 
@@ -20,7 +22,14 @@
     </script>!-->
     </head>
     <body>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+        <div class="g-signin2" data-onsuccess="onSignIn" style="display: inline-block"></div>
+        <div style="display:inline-block; float:right;">
+            <a href="market.html"  class="button1">Market</a>
+            <a href="about.html" class="button1">Team</a>
+        </div>
+        
+
+
         <div class="content">
             <center><h1 class="goatsmeet" id="goatsmeet" ></h1></center>
             <script>
@@ -32,21 +41,21 @@
                     });
                 });
             </script>
-            <a href="https://goatsmeet-matthewgaim.c9users.io/market.html"></a>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <div id="Headerr">
-                <h5>What Is GoatsMeet?</h5>
-            </div>
-            
-            <div id="section">
-                <p>GoatsMeet is a webpage for meatlovers, it was made because not every steak is high-quality. Lucky for you, GoatsMeet was made for only high quality meat. Here you can talk to 
-                farmers who keep animals in a non-hormone and non-steroid envoiroment</p>
+            <br><br><br>
+            <p>FACT: mor</p>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
             <div id="footer">
-                <script>function signOut() {var auth2 = gapi.auth2.getAuthInstance(); auth2.signOut().then(function () {  console.log('User signed out.'); });} </script>
+                <div id="Headerr">
+                    <h5>What Is GoatsMeet?</h5>
+                </div>
+                
+                <div id="section">
+                    <p>GoatsMeet is a webpage for meatlovers, it was made because not every steak is high-quality. Lucky for you, GoatsMeet was made for only high quality meat. Here you can talk to 
+                    farmers who keep animals in a non-hormone and non-steroid enviroment</p>
+                    <script>function signOut() {var auth2 = gapi.auth2.getAuthInstance(); auth2.signOut().then(function () {  console.log('User signed out.'); });} </script>
+                </div>
+                <center><input onclick="signOut()" type="button" class="button" value="Sign Out"></center>
             </div>
-            
-            <input onclick="signOut()" type="button" class="button" value="Sign Out">
- 
 
         <script>function signOut() {var auth2 = gapi.auth2.getAuthInstance(); auth2.signOut().then(function () {  console.log('User signed out.'); });}
         </script>
@@ -60,5 +69,6 @@
         <script type="text/javascript" src="typed/js/typed.js"></script>
         <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css"></link>
             <script src="https://js.arcgis.com/3.15/"></script>
+        
 </body>
 </html>
